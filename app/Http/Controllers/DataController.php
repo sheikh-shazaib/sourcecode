@@ -62,10 +62,10 @@ class DataController extends Controller
     public function login(Request $request)
     {       try{
         $request->validate([
-                    'customer_email' => 'required',
+                    'customer_code' => 'required',
                     'customer_password' => 'required',
                 ]);
-                $login = Data::where('customer_email', $request->customer_email)->Where('customer_password', $request->customer_password)->get(['customer_id','customer_name','customer_email', 'customer_password'])->toArray();
+                $login = Data::where('customer_code', $request->customer_code)->Where('customer_password', $request->customer_password)->get(['customer_id','customer_code','customer_name','customer_email', 'customer_password'])->toArray();
                 // $a=array('customer_id'=>"customer_id");
                     
                     if(!empty($login)){
@@ -282,20 +282,20 @@ class DataController extends Controller
     public function update(Request $request)
     {
         try{
-        // $validator = Validator::make($request->all(), [ 
-        //     'customer_name' => 'required',
-        //     'customer_email' => 'required',
-        //     'customer_country' => 'required',
-        //     'department_id' => 'required',
-        //     'designation_id' => 'required',
-        //     'customer_password' => 'required',
-        //     'customer_phone' => 'required',
-        //     'customer_status' => 'required',
-        //     'annual_leave' => 'required',
-        //     'casual_leave' => 'required',
-        //     'sick_leave' => 'required',
+        $validator = Validator::make($request->all(), [ 
+            'customer_name' => 'required',
+            'customer_email' => 'required',
+            'customer_country' => 'required',
+            'department_id' => 'required',
+            'designation_id' => 'required',
+            'customer_password' => 'required',
+            'customer_phone' => 'required',
+            'customer_status' => 'required',
+            'annual_leave' => 'required',
+            'casual_leave' => 'required',
+            'sick_leave' => 'required',
     
-        // ]);
+        ]);
         // if ($validator->fails()) {
         //     return response()->json($validator->errors(), 422);
         //   }

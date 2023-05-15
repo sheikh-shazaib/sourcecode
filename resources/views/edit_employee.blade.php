@@ -40,10 +40,12 @@
                      
                     <label for="name">Employee Name</label>
                     <input name="name" type="name" class="name form-control" value="{{$data[0]['customer_name']}}" required autocomplete="off">
+                    <span class="text-danger">@error('customer_name') {{$message}} @enderror </span>
                   </div>
                   <div class="form-group ">
                     <label for="Email">Employee Email</label>
                     <input name="email" type="email" class="email form-control" value="{{$data[0]['customer_email']}}"   required autocomplete="off">
+                    <span class="text-danger">@error('customer_email') {{$message}} @enderror </span>
                   </div>
                   {{--  --}}
                   
@@ -59,6 +61,7 @@
                               <option value="{{ $departmentss->department_id }}">{{$departmentss->department_name}}</option>
                           @endif
                       @endforeach
+                      <span class="text-danger">@error('department_id') {{$message}} @enderror </span>
                     </select>
                     
                   </div>
@@ -74,7 +77,7 @@
                            
                           
                         @endforeach
-
+                        <span class="text-danger">@error('designation_id') {{$message}} @enderror </span>
                     </select>
                   </div>
 
@@ -92,6 +95,7 @@
                         England
                       </option>
                     </select>
+                    {{-- <span class="text-danger">@error('customer_code') {{$message}} @enderror </span> --}}
                   </div>
                   
                   <div class="form-group ">   
@@ -99,12 +103,13 @@
                     
                     <input name="password1" type="password checkbox" id="passwordShow" class="password form-control " value="{{$data[0]['customer_password']}}" autocomplete="off"     required>
                     {{-- <input type="checkbox" id="check">  Show Password --}}
-                    
+                    <span class="text-danger">@error('customer_password') {{$message}} @enderror </span>
                   </div>
                   <div class="form-group">
                     <label for="phone">Employee Phone Number</label>
                     
                     <input name="phoneNumber" type="phone" class="phone form-control" value="{{$data[0]['customer_phone']}}" autocomplete="off"   required\>
+                    <span class="text-danger">@error('customer_phone') {{$message}} @enderror </span>
                   </div>
                   {{-- <div class="form-group">
                     <label>Employee Image</label>
@@ -114,6 +119,7 @@
                   <div class="form-group">
                     <label for="">Employee Image</label>
                     <input  name="customer_image" type="file" class="form-control" value="{{ url('file') }}/{{ $data[0]['customer_image'] }}">
+                    <span class="text-danger">@error('customer_image') {{$message}} @enderror </span>
                   </div>
                   @endif
                   @if (!empty($edit_leave))
@@ -124,16 +130,18 @@
                     <input  name="idLeave"  type="hidden" class="name form-control" value="{{$edit_leave[0]['leave_id']}}">
                     {{-- print_r({{$edit_leave[0]['leave_customer_id']}}) --}}
                     <input name="annual_leave" type="number" max="50" value="{{$edit_leave[0]['annual_leave']}}" class=" form-control" autocomplete="off">
+                    <span class="text-danger">@error('annual_leave') {{$message}} @enderror </span>
                     
                   </div>
                   <div class="form-group">
                     <label for="leave">Casual Leave</label>
                     <input name="casual_leave" type="number"  max="50" value="{{$edit_leave[0]['casual_leave']}}"  class="form-control"  autocomplete="off">
-                    
+                    <span class="text-danger">@error('casual_leave') {{$message}} @enderror </span>
                   </div>
                   <div class="form-group">
                     <label for="leave">Sick Leave</label>
                     <input name="sick_leave" type="number"  max="50" value="{{$edit_leave[0]['sick_leave']}}"  class="form-control" autocomplete="off" >
+                    <span class="text-danger">@error('sick_leave') {{$message}} @enderror </span>
                   </div>
                   @endif
                   @if (!empty($data))
