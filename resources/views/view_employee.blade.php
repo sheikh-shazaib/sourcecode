@@ -229,9 +229,9 @@
                         <td>{{$x['sick_leave']}}</td>
                         <td>
                         @if ($x['customer_status'] == 0)
-                            active
+                            Active
                         @else
-                            decative
+                            Decative
                         @endif
                             
                         

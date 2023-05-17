@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\TableController;
 use App\Http\Controllers\DataController;
 use App\Http\Controllers\FileController;
 use App\Http\Controllers\Api_Login_EmployeeController;
@@ -83,3 +84,5 @@ Route::post('ecxel_import', [Import_EcxelController::class, 'ecxel_import']);
 //Route::get('/designationChange/{id}',[DataController::class,'designationChange'] );
 //Route::get('/designationUpdate/{id}',[DataController::class,'designationUpdatE'] );
 // });
+Route::get('table', [TableController::class, 'table']);
+Route::post('table_insert', [TableController::class, 'table_insert']);

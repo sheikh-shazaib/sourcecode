@@ -40,7 +40,7 @@
               <table id="example2" class="table table-hover">
                 <thead class="table-secondary">
                   <div id="success_message"></div>
-                <tr>
+                <tr style="font-size: 94%;">
                   
                   <th>Designation ID</th>
                   <th>Designation Name</th>
