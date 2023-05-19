@@ -47,7 +47,15 @@ class DataController extends Controller
     //         ]);
     //     });
     // }
-
+    public function download_excel()
+    {
+        $data = Data::leftJoin('employee_leave', 'sourceemployees.customer_id', '=', 'employee_leave.leave_customer_id')
+            ->get()->toArray();
+            // dd($data);
+        return (new FastExcel($data))->download('Download Excel.xlsx');
+    }
+   
+   
     public function indexIogin()
     {
          try{

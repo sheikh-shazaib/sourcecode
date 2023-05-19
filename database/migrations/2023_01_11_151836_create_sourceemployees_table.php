@@ -14,8 +14,9 @@ return new class extends Migration
     public function up()
     {
         Schema::create('sourceemployees', function (Blueprint $table) {
-            $table->id('customer_id')->start_from(140000);
+            $table->id('customer_id');
             // $table->id('customer_id')->start(0000);
+            $table->string('customer_code');
             $table->string('customer_image');
             $table->string('customer_name');
             $table->string('customer_email');

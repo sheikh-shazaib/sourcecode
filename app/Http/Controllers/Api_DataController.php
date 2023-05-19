@@ -13,7 +13,8 @@ use App\Models\Data;
 use Illuminate\Support\Str; 
 use App\Models\departments;
 use App\Models\designation;
-
+use \Exception;
+use App\Traits\ErrorLogTrait;
 use Illuminate\Console\View\Components\Alert;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Session;
@@ -22,6 +23,8 @@ use Illuminate\Support\Facades\Crypt;
 
 class Api_DataController extends Controller
 {
+    use ErrorLogTrait;
+
     public function indexIogin()
     {
          
@@ -148,6 +151,7 @@ class Api_DataController extends Controller
    
     public function insert(Request $request)
     {
+        try{
         // dd($request->all());
     $validator = Validator::make($request->all(), [ 
         'customer_name' => 'required',
@@ -219,6 +223,9 @@ class Api_DataController extends Controller
             ]);
             //dd($abc[0]['customer_email'].''.$abc[0]['customer_phone']);
 
+        }}catch(Exception $e){
+            $this->logError($e, "Employee Insert");
+        
         }
     }
     public function designationEmp($id)

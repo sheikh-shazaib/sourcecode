@@ -15,6 +15,8 @@ return new class extends Migration
     {
         Schema::create('tables_3', function (Blueprint $tables_3) {
             $tables_3->id('table_3_id');
+            $tables_3->unsignedBigInteger('id');
+            $tables_3->foreign('id')->references('id')->on('tables_1');
             $tables_3->string('phone_number', 11);
             $tables_3->string('adress', 5);
             $tables_3->timestamps();

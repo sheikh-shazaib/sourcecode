@@ -133,6 +133,12 @@
                 <input name="phone_number" type="name" class="name form-control" required placeholder="Enter Phone Number" >
                 
               </div>
+              <div class="form-group">
+                <label   >Age</label>
+                 
+                <input name="age" type="number" class="name form-control" required placeholder="Enter Age" >
+                
+              </div>
               <div class="radio form-group">
                 <label >Status</label>
                 <input  type="radio" id="active" name="status" value="0" checked>

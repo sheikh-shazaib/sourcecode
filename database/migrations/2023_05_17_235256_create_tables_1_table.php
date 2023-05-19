@@ -17,10 +17,6 @@ return new class extends Migration
             $table_1->id('id');
             $table_1->string('name', 255);
             $table_1->string('email', 255);
-            $table_1->unsignedBigInteger('table_2_id');
-            $table_1->foreign('table_2_id')->references('table_2_id')->on('tables_2');
-            $table_1->unsignedBigInteger('table_3_id');
-            $table_1->foreign('table_3_id')->references('table_3_id')->on('tables_3');
             $table_1->timestamps();
         });
     }
