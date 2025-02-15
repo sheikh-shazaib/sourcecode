@@ -80,7 +80,7 @@
             
           </li>
           <li class="nav-item menu-open ">
-            <a href="{{url('designation')}}" class="nav-link {{'designation'== request()->path() ? 'active' : ''}}">
+            <a href="{{url('designation')}}" class="nav-link {{'designation'== request()->path() ? 'mm-active' : ''}}">
               <i class="nav-icon fas fa-tachometer-alt"></i>
               <p>
                 Designation
